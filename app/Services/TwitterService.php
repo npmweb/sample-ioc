@@ -4,8 +4,8 @@ class TwitterService {
 
     protected $apiKey;
 
-    public function __construct() {
-        $this->apiKey = 'api-key-123';
+    public function __construct( $apiKey ) {
+        $this->apiKey = $apiKey;
     }
 
     public function tweetAboutBlogPost( $title ) {
