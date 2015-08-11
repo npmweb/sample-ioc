@@ -13,8 +13,8 @@ class BlogController extends Controller
 
     protected $twitterService;
 
-    public function __construct( TwitterService $twitterService ) {
-        $this->twitterService = $twitterService;
+    public function __construct() {
+        $this->twitterService = new TwitterService( 'api-key-123' );
     }
 
     public function store()
