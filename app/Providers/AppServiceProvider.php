@@ -23,8 +23,11 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {
+        // app()->bind('App\Services\SocialService', function() {
+        //     return new \App\Services\TwitterService('api-key-123');
+        // });
         app()->bind('App\Services\SocialService', function() {
-            return new \App\Services\TwitterService('api-key-123');
+            return new \App\Services\FacebookService('thing1', 'thing2');
         });
     }
 }
