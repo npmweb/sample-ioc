@@ -6,20 +6,20 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-use App\Services\TwitterService;
+use App\Services\SocialService;
 
 class BlogController extends Controller
 {
 
     protected $twitterService;
 
-    public function __construct( TwitterService $twitterService) {
-        $this->twitterService = $twitterService;
+    public function __construct( SocialService $socialService) {
+        $this->socialService = $socialService;
     }
 
     public function store()
     {
-        $this->twitterService->tweetAboutBlogPost('My Blog Post');
+        $this->socialService->shareAboutBlogPost('My Blog Post');
     }
 
 }

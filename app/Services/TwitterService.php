@@ -1,6 +1,6 @@
 <?php namespace App\Services;
 
-class TwitterService {
+class TwitterService implements SocialService {
 
     protected $apiKey;
 
@@ -8,7 +8,7 @@ class TwitterService {
         $this->apiKey = $apiKey;
     }
 
-    public function tweetAboutBlogPost( $title ) {
+    public function shareAboutBlogPost( $title ) {
         echo 'Tweeting with API key '.$this->apiKey.' "New post: '.$title.'"';
     }
 
