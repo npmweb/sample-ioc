@@ -11,10 +11,15 @@ use App\Services\TwitterService;
 class BlogController extends Controller
 {
 
+    protected $twitterService;
+
+    public function __construct() {
+        $this->twitterService = new TwitterService;
+    }
+
     public function store()
     {
-        $twitterService = new TwitterService;
-        $twitterService->tweetAboutBlogPost('My Blog Post');
+        $this->twitterService->tweetAboutBlogPost('My Blog Post');
     }
 
 }
